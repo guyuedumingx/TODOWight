@@ -3,10 +3,10 @@ package model;
 public class Arrangement {
     private LabelType label = null;
     private String value = null;
-    private static final String DEFALUT_LABEL_NAME = "TODO";
+    private static final String DEFAULT_LABEL_NAME = "TODO";
 
     public Arrangement(String value) {
-        this(DEFALUT_LABEL_NAME, value);
+        this(DEFAULT_LABEL_NAME, value);
     }
 
     public Arrangement(String label, String value) {

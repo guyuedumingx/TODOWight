@@ -1,0 +1,9 @@
+#item:focus {
+    border-style: solid;
+    border-color: darkgray;
+    border-width: 2px;
+    border-radius: 5px;
+}
+#hBox {
+    background-color: transparent;
+}
