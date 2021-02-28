@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 
 public class Main extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         URL resource = Main.class.getClassLoader().getResource("main.fxml");

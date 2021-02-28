@@ -2,11 +2,16 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import model.Arrangement;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -27,20 +32,38 @@ public class MainController {
     private void addButtonAction() {
         butAdd.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                AnchorPane item = loadItem();
-                addItemButtonAction(item);
+                AnchorPane item = loadItem(new Arrangement("google"));
                 arrangements.getChildren().add(item);
             }
         });
     }
 
-    private void addItemButtonAction(AnchorPane item) {
+    private AnchorPane loadItem(Arrangement arrangement)  {
+        URL resource = this.getClass().getClassLoader().getResource("item.fxml");
+        AnchorPane item = null;
+        ItemController itemController = null;
+
+        try {
+            FXMLLoader loader = new FXMLLoader(resource);
+            item = loader.load();
+            itemController = loader.getController();
+
+            addItemButtonAction(item, arrangement);
+            itemController.init(arrangement);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return item;
+    }
+
+    private void addItemButtonAction(AnchorPane item, Arrangement arrangement) {
         ImageView editBut = (ImageView)item.lookup("#editBut");
         ImageView delBut = (ImageView)item.lookup("#delBut");
 
         editBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                System.out.println("Clicked editBut");
+                AnchorPane editor = loadEditor();
             }
         });
 
@@ -51,15 +74,19 @@ public class MainController {
         });
     }
 
-    private AnchorPane loadItem()  {
-        URL resource = this.getClass().getClassLoader().getResource("item.fxml");
-        AnchorPane item = null;
+    private AnchorPane loadEditor() {
+        URL resource = this.getClass().getClassLoader().getResource("editor.fxml");
+        Stage stage = new Stage();
+        AnchorPane root = null;
         try {
-            item = FXMLLoader.load(resource);
+            root = FXMLLoader.load(resource);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return item;
+        stage.setTitle("代办事项");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+        return root;
     }
 
     @FXML

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import model.Arrangement;
 
 public class ItemController {
 
@@ -18,6 +19,11 @@ public class ItemController {
 
     @FXML
     private Label content;
+
+    public void init(Arrangement arrangement) {
+        label.setText(arrangement.getLabel().getName());
+        content.setText(arrangement.getValue());
+    }
 
     @FXML
     public void initialize() {
