@@ -11,9 +11,9 @@
 
 <AnchorPane fx:id="BasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
-      <Label layoutX="62.0" layoutY="29.0" prefHeight="66.0" prefWidth="82.0" text="事 项" textAlignment="CENTER">
+      <Label layoutX="45.0" layoutY="29.0" prefHeight="66.0" prefWidth="99.0" text="事 项" textAlignment="CENTER">
          <font>
-            <Font name="Microsoft YaHei Bold" size="35.0" />
+            <Font name="Microsoft YaHei Bold" size="43.0" />
          </font>
       </Label>
       <ImageView fx:id="butAdd" fitHeight="45.0" fitWidth="43.0" layoutX="872.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">

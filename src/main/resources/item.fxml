@@ -18,7 +18,7 @@
                   <Font name="Microsoft YaHei Bold" size="23.0" />
                </font>
                <HBox.margin>
-                  <Insets left="10.0" />
+                  <Insets left="5.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="646.0" text="Show Something Here">

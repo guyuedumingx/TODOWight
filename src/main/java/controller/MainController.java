@@ -46,7 +46,6 @@ public class MainController {
 
         delBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                System.out.println("Clicked delBut");
                 arrangements.getChildren().remove(item);
             }
         });
