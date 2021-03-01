@@ -48,6 +48,7 @@ public class MainController {
                 Arrangement arrangement = new Arrangement("Show Something Here");
                 AnchorPane item = loadItem(arrangement,false);
                 arrangements.getChildren().add(0,item);
+                arrangementList.add(arrangement);
             }
         });
     }

@@ -9,6 +9,7 @@ import org.dom4j.dom.DOMDocument;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.dom4j.tree.BaseElement;
+import org.dom4j.tree.DefaultElement;
 import service.history.ArrangementService;
 import java.io.File;
 import java.io.FileWriter;
@@ -42,7 +43,7 @@ public class XmlArrangementService implements ArrangementService {
 
     private void createArrangementXml() {
         document = new DOMDocument();
-        root = new BaseElement("arrangements");
+        root = new DefaultElement("arrangements");
         document.setRootElement(root);
     }
 
