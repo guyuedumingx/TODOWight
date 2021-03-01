@@ -7,3 +7,13 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
+
+#pushBut {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../img/send.png");
+}
+
+#pushBut:hover {
+    -fx-background-image: url("../img/active_send.png");
+}
+

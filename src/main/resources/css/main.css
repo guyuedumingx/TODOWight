@@ -51,3 +51,13 @@
     -fx-background-insets: 2, 0, 0;
     -fx-background-radius: 2em;
 }
+
+.button {
+    -fx-background-image: url("../img/add.png");
+    -fx-background-color: transparent;
+}
+
+.button:hover {
+    -fx-background-image: url("../img/active_add.png");
+    -fx-background-color: transparent;
+}

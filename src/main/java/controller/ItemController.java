@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,10 +22,10 @@ import java.util.List;
 public class ItemController {
 
     @FXML
-    private ImageView editBut;
+    private Button editBut;
 
     @FXML
-    private ImageView delBut;
+    private Button delBut;
 
     @FXML
     private Label label;
@@ -46,15 +47,11 @@ public class ItemController {
 
     @FXML
     public void initialize() {
-        Image editImage = new Image("file:src/main/resources/img/edit.png");
-        Image delImage = new Image("file:src/main/resources/img/del.png");
-        delBut.setImage(delImage);
-        editBut.setImage(editImage);
     }
 
     public void addItemButtonAction(AnchorPane item, VBox arrangements) {
-        ImageView editBut = (ImageView)item.lookup("#editBut");
-        ImageView delBut = (ImageView)item.lookup("#delBut");
+        Button editBut = (Button)item.lookup("#editBut");
+        Button delBut = (Button) item.lookup("#delBut");
 
         editBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {

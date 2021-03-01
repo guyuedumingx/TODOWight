@@ -33,20 +33,16 @@
                   <Insets left="35.0" />
                </HBox.margin>
             </Label>
-            <ImageView fx:id="editBut" fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/edit.png" />
-               </image>
+            <Button id="editBut" fx:id="editBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
                <HBox.margin>
-                  <Insets left="20.0" top="10.0" />
-               </HBox.margin></ImageView>
-            <ImageView fx:id="delBut" fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/del.png" />
-               </image>
+                  <Insets right="20.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="delBut" fx:id="delBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" top="10.0" />
-               </HBox.margin></ImageView>
+                  <Insets top="8.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>

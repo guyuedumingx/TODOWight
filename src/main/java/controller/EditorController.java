@@ -1,20 +1,16 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Arrangement;
 
 public class EditorController {
 
     @FXML
-    private ImageView pushBut;
+    private Button pushBut;
 
     @FXML
     private TextArea editArea;
@@ -38,7 +34,6 @@ public class EditorController {
 
     @FXML
     public void initialize() {
-        pushBut.setImage(new Image("file:src/main/resources/img/send.png"));
         addItemButtonAction();
     }
 }

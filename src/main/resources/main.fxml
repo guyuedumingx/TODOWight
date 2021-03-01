@@ -16,15 +16,11 @@
             <Font name="System Bold" size="43.0" />
          </font>
       </Label>
-      <ImageView fx:id="butAdd" fitHeight="45.0" fitWidth="43.0" layoutX="872.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/add.png" />
-         </image>
-      </ImageView>
       <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="62.0" layoutY="95.0" opacity="0.79" prefHeight="527.0" prefWidth="863.0" stylesheets="@css/main.css">
          <content>
             <VBox id="arrangements" fx:id="arrangements" onMouseClicked="#addButtonAction" prefHeight="525.0" prefWidth="863.0" stylesheets="@css/main.css" />
          </content>
       </ScrollPane>
+      <Button fx:id="butAdd" layoutX="171.0" layoutY="38.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="50.0" stylesheets="@css/main.css" />
    </children>
 </AnchorPane>

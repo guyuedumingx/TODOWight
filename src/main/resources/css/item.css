@@ -14,3 +14,22 @@ HBox:hover {
    -fx-border-style: solid;
 }
 
+.button {
+    -fx-background-color: transparent;
+}
+
+#delBut {
+   -fx-background-image: url("../img/del.png");
+}
+
+#delBut:hover {
+    -fx-background-image: url("../img/active_del.png");
+}
+
+#editBut {
+    -fx-background-image: url("../img/edit.png");
+}
+
+#editBut:hover {
+    -fx-background-image: url("../img/active_edit.png");
+}

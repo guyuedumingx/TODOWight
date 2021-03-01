@@ -27,10 +27,6 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <ImageView fx:id="pushBut" fitHeight="41.0" fitWidth="42.0" layoutX="545.0" layoutY="84.0" onMouseClicked="#addItemButtonAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@img/send.png" />
-         </image>
-      </ImageView>
+      <Button id="pushBut" fx:id="pushBut" layoutX="545.0" layoutY="84.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/editor.css" />
    </children>
 </AnchorPane>
