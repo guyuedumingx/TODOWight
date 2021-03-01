@@ -8,12 +8,6 @@ HBox:hover {
     -fx-background-radius: 15px;
 }
 
-.imageview:hover {
-   -fx-background-color: red;
-   -fx-border-width: 2px;
-   -fx-border-style: solid;
-}
-
 .label:hover {
     -fx-font-size: 24px;
 }
