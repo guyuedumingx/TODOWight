@@ -1,19 +1,21 @@
 package controller;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.Arrangement;
-
+import service.history.ArrangementService;
+import service.history.impl.XmlArrangementService;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 public class MainController {
 
@@ -28,18 +30,42 @@ public class MainController {
 
     @FXML
     private ScrollPane scrollPane;
+
+    private ArrangementService service = new XmlArrangementService();
+    private static List<Arrangement> arrangementList = null;
+
+    public static void remove(Arrangement arrangement) {
+        arrangementList.remove(arrangement);
+    }
+
+    /**
+     * 添加main界面的事件绑定
+     */
     @FXML
     private void addButtonAction() {
         butAdd.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                AnchorPane item = loadItem(new Arrangement("google"));
-                arrangements.getChildren().add(item);
+                Arrangement arrangement = new Arrangement("Show Something Here");
+                AnchorPane item = loadItem(arrangement,false);
+                arrangements.getChildren().add(0,item);
             }
         });
     }
 
-    private AnchorPane loadItem(Arrangement arrangement)  {
-        URL resource = this.getClass().getClassLoader().getResource("item.fxml");
+    public void init(Stage stage) {
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                service.save(arrangementList);
+            }
+        });
+    }
+
+    /**
+     * 加载列表项
+     */
+    private AnchorPane loadItem(Arrangement arrangement, boolean showEditor)  {
+        URL resource = this.getClass().getClassLoader().getResource("item2.fxml");
         AnchorPane item = null;
         ItemController itemController = null;
 
@@ -48,8 +74,7 @@ public class MainController {
             item = loader.load();
             itemController = loader.getController();
 
-            addItemButtonAction(item, arrangement);
-            itemController.init(arrangement);
+            itemController.init(item, arrangements, showEditor, arrangement);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,40 +82,13 @@ public class MainController {
         return item;
     }
 
-    private void addItemButtonAction(AnchorPane item, Arrangement arrangement) {
-        ImageView editBut = (ImageView)item.lookup("#editBut");
-        ImageView delBut = (ImageView)item.lookup("#delBut");
-
-        editBut.setOnMouseClicked(event -> {
-            if(event.getButton() == MouseButton.PRIMARY) {
-                AnchorPane editor = loadEditor();
-            }
-        });
-
-        delBut.setOnMouseClicked(event -> {
-            if(event.getButton() == MouseButton.PRIMARY) {
-                arrangements.getChildren().remove(item);
-            }
-        });
-    }
-
-    private AnchorPane loadEditor() {
-        URL resource = this.getClass().getClassLoader().getResource("editor.fxml");
-        Stage stage = new Stage();
-        AnchorPane root = null;
-        try {
-            root = FXMLLoader.load(resource);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("代办事项");
-        stage.setScene(new Scene(root, 600, 400));
-        stage.show();
-        return root;
-    }
-
     @FXML
     public void initialize() {
         addButtonAction();
+        arrangementList = service.read();
+        for (Arrangement arrangement : arrangementList) {
+            AnchorPane item = loadItem(arrangement,false);
+            arrangements.getChildren().add(0,item);
+        }
     }
 }

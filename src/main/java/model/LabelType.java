@@ -1,17 +1,24 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class LabelType {
-    private String name;
+    private StringProperty name;
 
     public LabelType(String name) {
-        this.name = name;
+        this.name = new SimpleStringProperty(name);
     }
 
     public String getName() {
+        return name.getValue();
+    }
+
+    public StringProperty getNameProperty() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.setValue(name);
     }
 }

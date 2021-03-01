@@ -1,0 +1,27 @@
+#top_choiceBox{
+    -fx-min-width: 100px;
+    -fx-min-height: 30;
+    -fx-background-radius: 10px; /**圆角 */
+    -fx-font-size: 12px;	/**字体大小 */
+    -fx-font-weight: bold;
+    -fx-border-width: 0px;    /**边框宽度*/
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.root {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#top_choiceBox .context-menu{
+    -fx-min-width: 100px;
+    -fx-font-size: 12px;
+    -fx-background-radius: 8px; /**圆角 */
+}
+#content {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+}
+

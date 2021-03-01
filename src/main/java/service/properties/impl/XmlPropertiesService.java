@@ -15,14 +15,14 @@ import java.util.Iterator;
 import java.util.List;
 
 public class XmlPropertiesService  implements PropertiesService {
-    SAXReader reader = new SAXReader();
-    XMLWriter writer = null;
-    Document document = null;
-    Element root = null;
-    String url = null;
+    private SAXReader reader = new SAXReader();
+    private XMLWriter writer = null;
+    private Document document = null;
+    private Element root = null;
+    private String url = null;
 
     public XmlPropertiesService(String file) {
-        url = XmlPropertiesService.class.getClassLoader().getResource(file).getFile();
+        url = this.getClass().getClassLoader().getResource(file).getFile();
         tryReadXml(url);
     }
 

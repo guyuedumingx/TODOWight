@@ -1,6 +1,9 @@
+.root { -fx-focus-color: transparent; }
+
 #editArea {
     -fx-background-color: transparent;
-}
-#scrollPane2 {
-    -fx-background-color: transparent;
+    overflow: hidden;
+    word-break: break-all;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }

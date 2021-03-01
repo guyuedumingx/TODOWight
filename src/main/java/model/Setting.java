@@ -2,6 +2,8 @@ package model;
 
 import service.properties.PropertiesService;
 import service.properties.impl.XmlPropertiesService;
+
+import java.util.Iterator;
 import java.util.List;
 
 public class Setting {
@@ -25,6 +27,26 @@ public class Setting {
 
     public List<LabelType> getLabelTypes() {
         return labels;
+    }
+
+    public LabelType getNextLabel(LabelType label) {
+        int index = getLabelIndex(label);
+        if(++index >= labels.size()) {
+            index = 0;
+        }
+        return labels.get(index);
+    }
+
+    private int getLabelIndex(LabelType labelType) {
+        Iterator<LabelType> iterator = labels.iterator();
+        int i = 0;
+        while (iterator.hasNext()) {
+            if(iterator.next().getName().equals(labelType.getName())){
+                return i;
+            }
+            i++;
+        }
+        return -1;
     }
 
     public void addLabel(LabelType label) {

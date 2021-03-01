@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
-<AnchorPane id="item" prefHeight="45.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController" stylesheets="@css/editor.css">
+<AnchorPane id="pane" fx:id="pane" prefHeight="45.0" prefWidth="863.0" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
    <children>
-      <HBox id="hBox" layoutX="3.0" prefHeight="45.0" prefWidth="862.0" stylesheets="@css/editor.css">
+      <HBox prefHeight="45.0" prefWidth="863.0">
          <children>
             <Label fx:id="label" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="75.0" text="TODO" textAlignment="CENTER">
                <font>
-                  <Font name="Microsoft YaHei Bold" size="23.0" />
+                  <Font name="System Bold" size="23.0" />
                </font>
                <HBox.margin>
                   <Insets left="5.0" />
@@ -19,7 +27,7 @@
             </Label>
             <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="646.0" text="Show Something Here">
                <font>
-                  <Font name="Microsoft YaHei Bold" size="24.0" />
+                  <Font name="Microsoft YaHei Bold" size="26.0" />
                </font>
                <HBox.margin>
                   <Insets left="35.0" />

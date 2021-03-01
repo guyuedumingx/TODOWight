@@ -1,8 +1,11 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Arrangement {
     private LabelType label = null;
-    private String value = null;
+    private StringProperty value = null;
     private static final String DEFAULT_LABEL_NAME = "TODO";
 
     public Arrangement(String value) {
@@ -11,7 +14,7 @@ public class Arrangement {
 
     public Arrangement(String label, String value) {
         this.label = new LabelType(label);
-        this.value = value;
+        this.value = new SimpleStringProperty(value);
     }
 
     public LabelType getLabel() {
@@ -23,10 +26,14 @@ public class Arrangement {
     }
 
     public String getValue() {
+        return value.getValue();
+    }
+
+    public StringProperty getValueProperty() {
         return value;
     }
 
     public void setValue(String value) {
-        this.value = value;
+        this.value.setValue(value);
     }
 }
