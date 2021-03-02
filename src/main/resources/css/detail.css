@@ -26,7 +26,7 @@
 }
 
 #content .text {
-    -fx-line-spacing: 10px;
+    -fx-line-spacing: 5px;
     -fx-spacing: 10px;
     -fx-end-margin: 2px;
 }
@@ -41,21 +41,11 @@
     -fx-background-image: url("../img/active_edit.png");
 }
 
-#scrollPane {
-    -fx-background-color: transparent;
-}
-
 .root { -fx-focus-color: transparent; }
 
-#scrollPane .scroll-bar:vertical{
-    -fx-background-color:transparent;
-    -fx-border-color:transparent;
-    -fx-background-radius: 0em;
-    -fx-border-radius:2em;
-}
 /* The main scrollbar **track** CSS class  */
-#scrollPane .scroll-bar:horizontal .track,
-#scrollPane .scroll-bar:vertical .track{
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
     -fx-background-color:transparent;
     -fx-border-color:transparent;
     -fx-background-radius: 0em;
@@ -63,8 +53,8 @@
 }
 
 /* The increment and decrement button CSS class of scrollbar */
-#scrollPane .scroll-bar:horizontal .increment-button ,
-#scrollPane .scroll-bar:horizontal .decrement-button {
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
     -fx-background-color: transparent;
     -fx-background-radius: 0em;
     -fx-padding: 0 0 10 0;
@@ -74,22 +64,22 @@
 
 /* The increment and decrement button CSS class of scrollbar */
 
-#scrollPane .scroll-bar:vertical .increment-button ,
-#scrollPane .scroll-bar:vertical .decrement-button {
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
     -fx-background-color:transparent;
     -fx-background-radius: 0em;
     -fx-padding:0 10 0 0;
 }
 
-#scrollPane  .scroll-bar .increment-arrow,
-#scrollPane  .scroll-bar .decrement-arrow {
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
     -fx-shape: " ";
     -fx-padding: 0;
 }
 
 /* The main scrollbar **thumb** CSS class which we drag every time (movable) */
-#scrollPane .scroll-bar:horizontal .thumb,
-#scrollPane .scroll-bar:vertical .thumb {
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
     -fx-background-color: derive(black, 90%);
     -fx-background-insets: 2, 0, 0;
     -fx-background-radius: 2em;

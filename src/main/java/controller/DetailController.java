@@ -19,9 +19,6 @@ public class DetailController {
     private Button editBut;
 
     @FXML
-    private ScrollPane scrollPane;
-
-    @FXML
     private ChoiceBox<String> choiceBox;
 
     @FXML
@@ -81,8 +78,6 @@ public class DetailController {
     @FXML
     public void initialize() {
         content.setWrapText(true);
-        content.prefWidthProperty().bind(scrollPane.widthProperty());
-        content.prefHeightProperty().bind(scrollPane.heightProperty());
         addEditButtonAction();
     }
 }

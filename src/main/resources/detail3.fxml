@@ -43,20 +43,10 @@
       </HBox>
    </top>
    <center>
-      <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="723.0" prefWidth="839.0" stylesheets="@css/detail.css" BorderPane.alignment="CENTER">
-         <content>
-            <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="691.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
-               <font>
-                  <Font name="Sitka Heading" size="25.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </TextArea>
-         </content>
-      </ScrollPane>
+      <TextArea id="content" fx:id="content" editable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/detail.css" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Sitka Heading" size="27.0" />
+         </font>
+      </TextArea>
    </center>
 </BorderPane>
