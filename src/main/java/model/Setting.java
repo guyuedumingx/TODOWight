@@ -8,6 +8,12 @@ import service.properties.impl.XmlPropertiesService;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 设置类
+ * 用来调控程序的相关设置
+ *
+ * @author yohoyes
+ */
 public class Setting {
     private static String PROPERTIES_FILE_NAME = "properties.xml";
     private StringProperty path = new SimpleStringProperty();

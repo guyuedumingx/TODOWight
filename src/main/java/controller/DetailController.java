@@ -8,13 +8,15 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseButton;
-import javafx.stage.Stage;
 import model.Arrangement;
 import model.LabelType;
 import model.Setting;
-
 import java.util.List;
 
+/**
+ * 详情页面的控制器
+ * @author yohoyes
+ */
 public class DetailController {
     @FXML
     private Button editBut;

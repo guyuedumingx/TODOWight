@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 历史记录的xml实现类
+ *
+ * @author yohoyes
+ */
 public class XmlArrangementService implements ArrangementService {
 
     private SAXReader reader = new SAXReader();

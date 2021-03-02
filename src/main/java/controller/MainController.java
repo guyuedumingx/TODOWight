@@ -19,6 +19,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
+/**
+ * 主页面的控制器
+ * @author yohoyes
+ */
 public class MainController {
 
     @FXML

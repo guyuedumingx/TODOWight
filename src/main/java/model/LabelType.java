@@ -3,6 +3,11 @@ package model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * 事务标签
+ *
+ * @author yohoyes
+ */
 public class LabelType {
     private StringProperty name;
 

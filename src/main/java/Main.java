@@ -11,6 +11,11 @@ import javafx.stage.WindowEvent;
 
 import java.net.URL;
 
+/**
+ * 主类 程序入口
+ *
+ * @author yohoyes
+ */
 public class Main extends Application {
 
     @Override

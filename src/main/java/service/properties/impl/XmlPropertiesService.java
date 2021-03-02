@@ -14,6 +14,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 配置信息持久化类
+ *
+ * @author yohoyes
+ */
 public class XmlPropertiesService  implements PropertiesService {
     private SAXReader reader = new SAXReader();
     private XMLWriter writer = null;

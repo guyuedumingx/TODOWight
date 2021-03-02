@@ -7,6 +7,10 @@ import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 import model.Arrangement;
 
+/**
+ * 编辑页面的控制器
+ * @author yohoyes
+ */
 public class EditorController {
 
     @FXML

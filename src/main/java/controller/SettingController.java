@@ -10,6 +10,12 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.LabelType;
 import model.Setting;
+
+/**
+ * 设置页面的控制器
+ *
+ * @author yohoyes
+ */
 public class SettingController {
 
     @FXML

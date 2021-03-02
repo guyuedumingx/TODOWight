@@ -3,6 +3,12 @@ package model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * 事务类
+ * 核心类
+ *
+ * @author yohoyes
+ */
 public class Arrangement {
     private LabelType label = null;
     private StringProperty value = null;

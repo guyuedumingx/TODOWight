@@ -16,6 +16,10 @@ import model.Setting;
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ * 选项卡的控制器
+ * @author yohoyes
+ */
 public class ItemController {
 
     @FXML
