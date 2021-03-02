@@ -1,10 +1,14 @@
 
 .button {
-    -fx-background-image: url("../img/active_add_setting.png");
+    -fx-background-image: url("../img/setting_add.png");
     -fx-background-color: transparent;
-    -fx-opacity: 0.6;
 }
 
-.button:hover {
-    -fx-opacity: 1;
+#labelField:hover {
+    -fx-background-image: url("../img/active_setting_add.png");
+}
+
+#labelField {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }

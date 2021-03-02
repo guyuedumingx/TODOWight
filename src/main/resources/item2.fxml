@@ -17,7 +17,7 @@
    <children>
       <HBox prefHeight="45.0" prefWidth="863.0">
          <children>
-            <Label fx:id="label" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="75.0" text="TODO" textAlignment="CENTER">
+            <Label fx:id="label" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="130.0" text="TODO" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
@@ -25,12 +25,12 @@
                   <Insets left="5.0" />
                </HBox.margin>
             </Label>
-            <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="646.0" text="Show Something Here">
+            <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="630.0" text="Show Something Here">
                <font>
                   <Font name="Microsoft YaHei Bold" size="26.0" />
                </font>
                <HBox.margin>
-                  <Insets left="35.0" />
+                  <Insets />
                </HBox.margin>
             </Label>
             <Button id="editBut" fx:id="editBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">

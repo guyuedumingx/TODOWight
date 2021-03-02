@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@css/setting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingController">
    <children>
       <Label layoutX="40.0" layoutY="39.0" prefHeight="66.0" prefWidth="99.0" text="设 置" textAlignment="CENTER">
@@ -15,12 +14,12 @@
             <Font name="System Bold" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="55.0" layoutY="105.0" prefHeight="35.0" prefWidth="87.0" text="自定义异常">
+      <Label layoutX="55.0" layoutY="105.0" prefHeight="35.0" prefWidth="87.0" text="自定义标签">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="nameField" layoutX="214.0" layoutY="108.0" prefHeight="30.0" prefWidth="110.0" />
-      <Button fx:id="pushBut" layoutX="340.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <TextField id="labelField" fx:id="nameField" layoutX="239.0" layoutY="108.0" prefHeight="30.0" prefWidth="110.0" stylesheets="@css/setting.css" />
+      <Button fx:id="pushBut" layoutX="356.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
    </children>
 </AnchorPane>

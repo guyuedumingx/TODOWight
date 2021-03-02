@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -34,7 +35,10 @@ public class ItemController {
     public void init(AnchorPane item, VBox arrangements, boolean showEditor, Arrangement arrangement) {
         this.arrangement = arrangement;
         if(showEditor) {
-            loadEditor();
+            AnchorPane editorPane = loadEditor();
+            TextArea editArea = (TextArea) editorPane.lookup("#editArea");
+            editArea.selectAll();
+
         }
         content.textProperty().bind(arrangement.getValueProperty());
         label.textProperty().bind(arrangement.getLabel().getNameProperty());
@@ -51,7 +55,9 @@ public class ItemController {
 
         editBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                AnchorPane editor = loadEditor();
+                AnchorPane editorPane = loadEditor();
+                TextArea editArea = (TextArea) editorPane.lookup("#editArea");
+                editArea.positionCaret(editArea.getText().length());
             }
         });
 
@@ -103,12 +109,12 @@ public class ItemController {
             FXMLLoader loader = new FXMLLoader(resource);
             root = loader.load();
             DetailController controller = (DetailController) loader.getController();
-            controller.init(arrangement);
+            controller.init(label,arrangement);
         } catch (IOException e) {
             e.printStackTrace();
         }
         stage.setTitle("Detail");
-        stage.setScene(new Scene(root, 400, 800));
+        stage.setScene(new Scene(root, 600, 800));
         stage.show();
         return root;
     }

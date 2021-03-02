@@ -3,6 +3,7 @@ package controller;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseButton;
@@ -29,6 +30,9 @@ public class MainController {
     private Button butAdd;
 
     @FXML
+    private Button butSet;
+
+    @FXML
     private ScrollPane scrollPane;
 
     private ArrangementService service = new XmlArrangementService();
@@ -51,6 +55,12 @@ public class MainController {
                 arrangementList.add(arrangement);
             }
         });
+        butSet.setOnMouseClicked(event -> {
+            if(event.getButton() == MouseButton.PRIMARY) {
+                System.out.println("touch setting");
+                AnchorPane settingPane = loadSetting();
+            }
+        });
     }
 
     public void init(Stage stage) {
@@ -60,6 +70,25 @@ public class MainController {
                 service.save(arrangementList);
             }
         });
+    }
+
+    private AnchorPane loadSetting() {
+        URL resource = this.getClass().getClassLoader().getResource("setting.fxml");
+        Stage stage = new Stage();
+        AnchorPane set = null;
+        SettingController controller = null;
+
+        try{
+            FXMLLoader loader = new FXMLLoader(resource);
+            set = loader.load();
+            controller = loader.getController();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setTitle("Setting");
+        stage.setScene(new Scene(set, 400, 600));
+        stage.show();
+        return set;
     }
 
     /**

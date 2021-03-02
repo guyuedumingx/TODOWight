@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="BasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <children>
-      <Label layoutX="45.0" layoutY="29.0" prefHeight="66.0" prefWidth="99.0" text="事 项" textAlignment="CENTER">
+      <Label layoutX="51.0" layoutY="29.0" prefHeight="66.0" prefWidth="99.0" text="事 项" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="43.0" />
          </font>
@@ -21,6 +21,7 @@
             <VBox id="arrangements" fx:id="arrangements" onMouseClicked="#addButtonAction" prefHeight="525.0" prefWidth="863.0" stylesheets="@css/main.css" />
          </content>
       </ScrollPane>
-      <Button fx:id="butAdd" layoutX="171.0" layoutY="38.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="50.0" stylesheets="@css/main.css" />
+      <Button id="addBut" fx:id="butAdd" layoutX="182.0" layoutY="37.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/main.css" />
+      <Button id="setBut" fx:id="butSet" layoutX="885.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/main.css" />
    </children>
 </AnchorPane>

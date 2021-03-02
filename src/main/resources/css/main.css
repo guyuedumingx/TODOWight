@@ -52,12 +52,23 @@
     -fx-background-radius: 2em;
 }
 
-.button {
+#addBut {
     -fx-background-image: url("../img/add.png");
     -fx-background-color: transparent;
 }
 
-.button:hover {
+#addBut:hover {
     -fx-background-image: url("../img/active_add.png");
+    -fx-background-color: #d3d7d4;
+    -fx-background-radius: 15px;
+}
+
+#setBut {
+    -fx-background-image: url("../img/set.png");
+    -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
+}
+
+#setBut:hover {
+    -fx-background-image: url("../img/active_set.png");
 }

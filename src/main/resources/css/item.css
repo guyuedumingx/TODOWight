@@ -18,6 +18,7 @@ HBox:hover {
 
 #delBut {
    -fx-background-image: url("../img/del.png");
+    -fx-background-repeat: no-repeat;
 }
 
 #delBut:hover {
@@ -26,6 +27,7 @@ HBox:hover {
 
 #editBut {
     -fx-background-image: url("../img/edit.png");
+    -fx-background-repeat: no-repeat;
 }
 
 #editBut:hover {

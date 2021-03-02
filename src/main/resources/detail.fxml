@@ -7,27 +7,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailController">
    <children>
-      <Label layoutX="45.0" layoutY="29.0" prefHeight="66.0" prefWidth="99.0" text="详 情">
+      <Label layoutX="23.0" layoutY="23.0" prefHeight="66.0" prefWidth="99.0" text="详 情">
          <font>
             <Font name="System Bold" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="95.0" prefHeight="44.0" prefWidth="99.0" text="状 态">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-      <ChoiceBox id="top_choiceBox" fx:id="choiceBox" layoutX="286.0" layoutY="102.0" minWidth="69.0" opacity="0.86" prefHeight="30.0" prefWidth="69.0" stylesheets="@css/detail.css" />
-      <Label layoutX="45.0" layoutY="145.0" prefHeight="44.0" prefWidth="99.0" text="内 容">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-      <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" layoutX="44.0" layoutY="195.0" prefHeight="605.0" prefWidth="342.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
+      <ChoiceBox id="top_choiceBox" fx:id="choiceBox" layoutX="443.0" layoutY="74.0" minWidth="99.0" opacity="0.86" prefHeight="30.0" prefWidth="99.0" stylesheets="@css/detail.css" />
+      <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" layoutY="109.0" prefHeight="691.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
          <font>
             <Font name="System Bold" size="19.0" />
          </font></TextArea>
+      <Button id="editBut" fx:id="editBut" layoutX="553.0" layoutY="74.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/detail.css" />
    </children>
 </AnchorPane>
