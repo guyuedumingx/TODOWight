@@ -39,5 +39,6 @@ public class EditorController {
     @FXML
     public void initialize() {
         addItemButtonAction();
+        editArea.setWrapText(true);
     }
 }

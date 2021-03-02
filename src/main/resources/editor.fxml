@@ -11,15 +11,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditorController">
    <children>
-      <Label layoutX="14.0" layoutY="84.0" prefHeight="38.0" prefWidth="81.0" text="内 容" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="31.0" />
-         </font>
-      </Label>
-      <TextArea id="editArea" fx:id="editArea" layoutX="14.0" layoutY="143.0" prefHeight="257.0" prefWidth="585.0" promptText="Text Something Here" stylesheets="@css/editor.css">
+      <TextArea id="editArea" fx:id="editArea" layoutX="14.0" layoutY="74.0" prefHeight="326.0" prefWidth="585.0" promptText="Text Something Here" stylesheets="@css/editor.css">
 
       <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Sitka Heading Bold" size="24.0" />
          </font>
       </TextArea>
       <Label layoutX="12.0" layoutY="14.0" prefHeight="64.0" prefWidth="166.0" text="Editor" textAlignment="CENTER">
@@ -27,6 +22,6 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Button id="pushBut" fx:id="pushBut" layoutX="545.0" layoutY="84.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/editor.css" />
+      <Button id="pushBut" fx:id="pushBut" layoutX="536.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/editor.css" />
    </children>
 </AnchorPane>
