@@ -5,11 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Arrangement;
@@ -26,6 +26,9 @@ public class ItemController {
 
     @FXML
     private Button editBut;
+
+    @FXML
+    private HBox parentBox;
 
     @FXML
     private Button delBut;
@@ -53,6 +56,7 @@ public class ItemController {
 
     @FXML
     public void initialize() {
+        content.prefWidthProperty().bind(parentBox.widthProperty());
     }
 
     public void addItemButtonAction(BorderPane item, VBox arrangements) {
@@ -108,7 +112,7 @@ public class ItemController {
     }
 
     private BorderPane loadDetail() {
-        URL resource = this.getClass().getClassLoader().getResource("detail2.fxml");
+        URL resource = this.getClass().getClassLoader().getResource("detail3.fxml");
         Stage stage = new Stage();
         BorderPane root = null;
         try {

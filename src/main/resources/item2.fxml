@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -19,15 +20,8 @@
          </padding>
             </Label>
          </left>
-         <center>
-            <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="630.0" text="Show Something Here" BorderPane.alignment="CENTER_LEFT">
-               <font>
-                  <Font name="Microsoft YaHei Bold" size="26.0" />
-               </font>
-            </Label>
-         </center>
          <right>
-            <HBox prefHeight="45.0" prefWidth="88.0" BorderPane.alignment="CENTER_RIGHT">
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="88.0" BorderPane.alignment="CENTER_RIGHT">
                <children>
                   <Button id="editBut" fx:id="editBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
                      <HBox.margin>
@@ -42,4 +36,15 @@
                </children>
             </HBox>
          </right>
+   <center>
+      <HBox fx:id="parentBox" prefHeight="47.0" prefWidth="632.0" BorderPane.alignment="CENTER">
+         <children>
+                  <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="293.0" text="Show Something Here" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="26.0" />
+                     </font>
+                  </Label>
+         </children>
+      </HBox>
+   </center>
 </BorderPane>

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="807.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="807.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailController">
    <top>
       <HBox prefHeight="101.0" prefWidth="262.0" BorderPane.alignment="CENTER">
          <children>
@@ -45,7 +45,7 @@
    <center>
       <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="723.0" prefWidth="839.0" stylesheets="@css/detail.css" BorderPane.alignment="CENTER">
          <content>
-            <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" prefHeight="691.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
+            <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="691.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
                <font>
                   <Font name="Sitka Heading" size="25.0" />
                </font>
