@@ -3,10 +3,7 @@ package controller;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import model.Arrangement;
 import model.LabelType;
@@ -20,6 +17,9 @@ import java.util.List;
 public class DetailController {
     @FXML
     private Button editBut;
+
+    @FXML
+    private ScrollPane scrollPane;
 
     @FXML
     private ChoiceBox<String> choiceBox;
@@ -81,6 +81,8 @@ public class DetailController {
     @FXML
     public void initialize() {
         content.setWrapText(true);
+        content.prefWidthProperty().bind(scrollPane.widthProperty());
+        content.prefHeightProperty().bind(scrollPane.heightProperty());
         addEditButtonAction();
     }
 }

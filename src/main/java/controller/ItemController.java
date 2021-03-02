@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
@@ -83,7 +84,7 @@ public class ItemController {
 
         content.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
-                AnchorPane anchorPane = loadDetail();
+                BorderPane anchorPane = loadDetail();
             }
         });
     }
@@ -106,10 +107,10 @@ public class ItemController {
         return root;
     }
 
-    private AnchorPane loadDetail() {
-        URL resource = this.getClass().getClassLoader().getResource("detail.fxml");
+    private BorderPane loadDetail() {
+        URL resource = this.getClass().getClassLoader().getResource("detail2.fxml");
         Stage stage = new Stage();
-        AnchorPane root = null;
+        BorderPane root = null;
         try {
             FXMLLoader loader = new FXMLLoader(resource);
             root = loader.load();
