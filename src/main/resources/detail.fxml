@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -17,8 +18,14 @@
       <ChoiceBox id="top_choiceBox" fx:id="choiceBox" layoutX="443.0" layoutY="74.0" minWidth="99.0" opacity="0.86" prefHeight="30.0" prefWidth="99.0" stylesheets="@css/detail.css" />
       <TextArea id="content" fx:id="content" editable="false" focusTraversable="false" layoutY="109.0" prefHeight="691.0" prefWidth="600.0" style="-fx-background-color: transparent;" stylesheets="@css/detail.css">
          <font>
-            <Font name="System Bold" size="19.0" />
-         </font></TextArea>
+            <Font name="Sitka Heading" size="25.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextArea>
       <Button id="editBut" fx:id="editBut" layoutX="553.0" layoutY="74.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/detail.css" />
    </children>
 </AnchorPane>

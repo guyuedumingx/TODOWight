@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.Arrangement;
+import model.Setting;
 import service.history.ArrangementService;
 import service.history.impl.XmlArrangementService;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class MainController {
     @FXML
     private ScrollPane scrollPane;
 
-    private ArrangementService service = new XmlArrangementService();
+    private ArrangementService service = new XmlArrangementService(Setting.getSetting().getPath());
     private static List<Arrangement> arrangementList = null;
 
     public static void remove(Arrangement arrangement) {
@@ -82,6 +83,7 @@ public class MainController {
             FXMLLoader loader = new FXMLLoader(resource);
             set = loader.load();
             controller = loader.getController();
+            controller.init(stage);
         }catch (IOException e) {
             e.printStackTrace();
         }

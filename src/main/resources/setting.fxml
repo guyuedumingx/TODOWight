@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@css/setting.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingController">
    <children>
-      <Label layoutX="40.0" layoutY="39.0" prefHeight="66.0" prefWidth="99.0" text="设 置" textAlignment="CENTER">
+      <Label layoutX="43.0" layoutY="23.0" prefHeight="66.0" prefWidth="99.0" text="设 置" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="43.0" />
          </font>
@@ -20,6 +20,13 @@
          </font>
       </Label>
       <TextField id="labelField" fx:id="nameField" layoutX="239.0" layoutY="108.0" prefHeight="30.0" prefWidth="110.0" stylesheets="@css/setting.css" />
-      <Button fx:id="pushBut" layoutX="356.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+      <Button id="labelBut" fx:id="pushBut" layoutX="356.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
+      <Label layoutX="55.0" layoutY="148.0" prefHeight="35.0" prefWidth="87.0" text="资源路径">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField id="labelField" fx:id="pathField" editable="false" layoutX="157.0" layoutY="151.0" prefHeight="30.0" prefWidth="192.0" stylesheets="@css/setting.css" />
+      <Button id="pathBut" fx:id="pathBut" layoutX="356.0" layoutY="151.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
    </children>
 </AnchorPane>

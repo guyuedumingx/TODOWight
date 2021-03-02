@@ -64,6 +64,25 @@ public class XmlPropertiesService  implements PropertiesService {
     }
 
     @Override
+    public void setPath(String path) {
+        Element element = root.element("path");
+        if(element == null) {
+            element = root.addElement("path");
+        }
+        element.addAttribute("url", path);
+        write();
+    }
+
+    @Override
+    public String getPath() {
+        try {
+            return root.element("path").attribute("url").getValue();
+        }catch (Exception e) {
+            return "";
+        }
+    }
+
+    @Override
     public List<LabelType> readLabelType() {
         List<LabelType> labels = new ArrayList<>();
         for (Iterator it = root.elementIterator("label"); it.hasNext();) {

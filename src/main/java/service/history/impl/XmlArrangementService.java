@@ -8,7 +8,6 @@ import org.dom4j.Element;
 import org.dom4j.dom.DOMDocument;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
-import org.dom4j.tree.BaseElement;
 import org.dom4j.tree.DefaultElement;
 import service.history.ArrangementService;
 import java.io.File;
@@ -27,8 +26,8 @@ public class XmlArrangementService implements ArrangementService {
     private final String FILE_NAME = "history.xml";
     private String url = null;
 
-    public XmlArrangementService() {
-        url = this.getClass().getClassLoader().getResource(FILE_NAME).getFile();
+    public XmlArrangementService(String path) {
+        url = path + File.separator + FILE_NAME;
         tryReadXml(url);
     }
 

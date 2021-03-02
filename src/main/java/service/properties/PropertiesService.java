@@ -11,4 +11,8 @@ public interface PropertiesService {
 
     List<LabelType> readLabelType();
 
+    void setPath(String url);
+
+    String getPath();
+
 }

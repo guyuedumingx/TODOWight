@@ -1,5 +1,7 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import service.properties.PropertiesService;
 import service.properties.impl.XmlPropertiesService;
 
@@ -8,6 +10,7 @@ import java.util.List;
 
 public class Setting {
     private static String PROPERTIES_FILE_NAME = "properties.xml";
+    private StringProperty path = new SimpleStringProperty();
     private static Setting properties = new Setting();
     private List<LabelType> labels = null;
     private PropertiesService service = null;
@@ -19,6 +22,11 @@ public class Setting {
     public void init() {
         service = new XmlPropertiesService(PROPERTIES_FILE_NAME);
         labels = service.readLabelType();
+        String path = service.getPath();
+        if("".equals(path)){
+            path = this.getClass().getClassLoader().getResource("").getPath();
+        }
+        this.path.setValue(path);
     }
 
     public static Setting getSetting() {
@@ -52,5 +60,18 @@ public class Setting {
     public void addLabel(LabelType label) {
         labels.add(label);
         service.addLabelType(label);
+    }
+
+    public String getPath() {
+        return path.get();
+    }
+
+    public void setPath(String path) {
+        this.path.set(path);
+        service.setPath(path);
+    }
+
+    public StringProperty pathProperty() {
+        return path;
     }
 }
