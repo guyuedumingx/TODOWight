@@ -72,6 +72,7 @@ public class DetailController {
                     content.setEditable(false);
                 }else {
                     content.setEditable(true);
+                    content.positionCaret(content.getText().length());
                 }
             }
         });
