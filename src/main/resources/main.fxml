@@ -9,19 +9,57 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="BasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
-   <children>
-      <Label layoutX="51.0" layoutY="29.0" prefHeight="66.0" prefWidth="99.0" text="事 项" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="43.0" />
-         </font>
-      </Label>
-      <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="62.0" layoutY="95.0" opacity="0.79" prefHeight="527.0" prefWidth="863.0" stylesheets="@css/main.css">
-         <content>
-            <VBox id="arrangements" fx:id="arrangements" onMouseClicked="#addButtonAction" prefHeight="525.0" prefWidth="863.0" stylesheets="@css/main.css" />
-         </content>
-      </ScrollPane>
-      <Button id="addBut" fx:id="butAdd" layoutX="182.0" layoutY="37.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/main.css" />
-      <Button id="setBut" fx:id="butSet" layoutX="885.0" layoutY="7.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/main.css" />
-   </children>
-</AnchorPane>
+<BorderPane fx:id="BasePane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="812.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <top>
+            <HBox prefHeight="91.0" prefWidth="1119.0" BorderPane.alignment="CENTER">
+               <children>
+            <BorderPane prefHeight="81.0" prefWidth="925.0" HBox.hgrow="ALWAYS">
+               <left>
+                  <HBox prefHeight="48.0" prefWidth="865.0" BorderPane.alignment="CENTER_LEFT">
+                     <children>
+                              <Label prefHeight="66.0" prefWidth="107.0" text="事 项" textAlignment="CENTER" HBox.hgrow="NEVER">
+                                 <font>
+                                    <Font name="System Bold" size="43.0" />
+                                 </font>
+                           <HBox.margin>
+                              <Insets bottom="20.0" />
+                           </HBox.margin>
+                              </Label>
+                              <Button id="addBut" fx:id="butAdd" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/main.css" HBox.hgrow="NEVER">
+                           <HBox.margin>
+                              <Insets left="30.0" top="4.0" />
+                           </HBox.margin>
+                              </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets left="60.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </left>
+               <top>
+                        <Button id="setBut" fx:id="butSet" mnemonicParsing="false" prefHeight="30.0" prefWidth="28.0" stylesheets="@css/main.css" BorderPane.alignment="TOP_RIGHT">
+                     <BorderPane.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </BorderPane.margin>
+                        </Button>
+               </top>
+            </BorderPane>
+               </children>
+            </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="527.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+                  <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" opacity="0.79" prefHeight="527.0" prefWidth="863.0" stylesheets="@css/main.css" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox id="arrangements" fx:id="arrangements" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addButtonAction" prefHeight="525.0" prefWidth="902.0" stylesheets="@css/main.css">
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                  </VBox>
+                     </content>
+                  </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

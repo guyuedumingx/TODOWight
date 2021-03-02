@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -26,7 +27,7 @@ import java.util.List;
 public class MainController {
 
     @FXML
-    private AnchorPane BasePane;
+    private BorderPane BasePane;
 
     @FXML
     private VBox arrangements;
@@ -55,7 +56,7 @@ public class MainController {
         butAdd.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 Arrangement arrangement = new Arrangement("Show Something Here");
-                AnchorPane item = loadItem(arrangement,true);
+                BorderPane item = loadItem(arrangement,true);
                 arrangements.getChildren().add(0,item);
                 arrangementList.add(arrangement);
             }
@@ -100,9 +101,9 @@ public class MainController {
     /**
      * 加载列表项
      */
-    private AnchorPane loadItem(Arrangement arrangement, boolean showEditor)  {
+    private BorderPane loadItem(Arrangement arrangement, boolean showEditor)  {
         URL resource = this.getClass().getClassLoader().getResource("item2.fxml");
-        AnchorPane item = null;
+        BorderPane item = null;
         ItemController itemController = null;
 
         try {
@@ -121,9 +122,10 @@ public class MainController {
     @FXML
     public void initialize() {
         addButtonAction();
+        arrangements.prefWidthProperty().bind(scrollPane.widthProperty());
         arrangementList = service.read();
         for (Arrangement arrangement : arrangementList) {
-            AnchorPane item = loadItem(arrangement,false);
+            BorderPane item = loadItem(arrangement,false);
             arrangements.getChildren().add(0,item);
         }
     }

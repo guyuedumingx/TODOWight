@@ -13,37 +13,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<AnchorPane id="pane" fx:id="pane" prefHeight="45.0" prefWidth="863.0" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
-   <children>
-      <HBox prefHeight="45.0" prefWidth="863.0">
-         <children>
-            <Label fx:id="label" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="130.0" text="TODO" textAlignment="CENTER">
+<BorderPane id="pane" prefHeight="45.0" prefWidth="863.0" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+         <left>
+            <Label fx:id="label" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="143.0" text="TODO" textAlignment="CENTER" BorderPane.alignment="CENTER_LEFT">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="25.0" />
+         </padding>
             </Label>
-            <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="630.0" text="Show Something Here">
+         </left>
+         <center>
+            <Label fx:id="content" maxHeight="1.7976931348623157E308" prefHeight="45.0" prefWidth="630.0" text="Show Something Here" BorderPane.alignment="CENTER_LEFT">
                <font>
                   <Font name="Microsoft YaHei Bold" size="26.0" />
                </font>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
             </Label>
-            <Button id="editBut" fx:id="editBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
-               <HBox.margin>
-                  <Insets right="20.0" top="8.0" />
-               </HBox.margin>
-            </Button>
-            <Button id="delBut" fx:id="delBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
-               <HBox.margin>
-                  <Insets top="8.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-   </children>
-</AnchorPane>
+         </center>
+         <right>
+            <HBox prefHeight="45.0" prefWidth="88.0" BorderPane.alignment="CENTER_RIGHT">
+               <children>
+                  <Button id="editBut" fx:id="editBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
+                     <HBox.margin>
+                        <Insets right="20.0" top="8.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="delBut" fx:id="delBut" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" stylesheets="@css/item.css">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </right>
+</BorderPane>

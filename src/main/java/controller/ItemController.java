@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Arrangement;
@@ -36,7 +37,7 @@ public class ItemController {
 
     private Arrangement arrangement = null;
 
-    public void init(AnchorPane item, VBox arrangements, boolean showEditor, Arrangement arrangement) {
+    public void init(BorderPane item, VBox arrangements, boolean showEditor, Arrangement arrangement) {
         this.arrangement = arrangement;
         if(showEditor) {
             AnchorPane editorPane = loadEditor();
@@ -53,7 +54,7 @@ public class ItemController {
     public void initialize() {
     }
 
-    public void addItemButtonAction(AnchorPane item, VBox arrangements) {
+    public void addItemButtonAction(BorderPane item, VBox arrangements) {
         Button editBut = (Button)item.lookup("#editBut");
         Button delBut = (Button) item.lookup("#delBut");
 
