@@ -3,7 +3,6 @@ package model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.label.LabelType;
-import model.label.impl.NoAttrLabelType;
 
 /**
  * 事务类
@@ -21,7 +20,7 @@ public class Arrangement {
     private static final String DEFAULT_LABEL_NAME = "TODO";
 
     public Arrangement(String value) {
-        this(new NoAttrLabelType(DEFAULT_LABEL_NAME), value);
+        this(new LabelType(DEFAULT_LABEL_NAME), value);
     }
 
     public Arrangement(LabelType label, String value) {

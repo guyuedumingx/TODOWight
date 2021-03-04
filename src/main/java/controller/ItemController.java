@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import model.Arrangement;
 import model.label.LabelType;
 import model.Setting;
+import util.AttrUtil;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -79,12 +81,11 @@ public class ItemController {
         content.textProperty().bind(arrangement.getValueProperty());
         //绑定代办的标签
         label.textProperty().bind(arrangement.getLabel().getNameProperty());
+        label.setTooltip(AttrUtil.getTooltipbyLabel(arrangement.getLabel()));
         addItemButtonAction(item, arrangements);
 
-        if(arrangement.getLabel().hasAttr()) {
-            label.setTooltip(new Tooltip(arrangement.getLabel().getAttr()));
-        }
         if(arrangement.hasDeadline()) {
+            //TODO arrangement tooltip css
             content.setTooltip(new Tooltip(arrangement.getDeadline()+""));
         }
     }
@@ -121,9 +122,7 @@ public class ItemController {
                 LabelType nextLabel = Setting.getSetting().getNextLabel(arrangement.getLabel());
                 arrangement.setLabel(nextLabel);
                 label.textProperty().bind(arrangement.getLabel().getNameProperty());
-                if(nextLabel.hasAttr()) {
-                    label.setTooltip(new Tooltip(nextLabel.getAttr()));
-                }
+                label.setTooltip(AttrUtil.getTooltipbyLabel(nextLabel));
             }
         });
 

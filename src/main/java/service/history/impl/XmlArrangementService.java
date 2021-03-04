@@ -2,8 +2,6 @@ package service.history.impl;
 
 import model.Arrangement;
 import model.label.LabelType;
-import model.label.impl.AttrLabelType;
-import model.label.impl.NoAttrLabelType;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -64,13 +62,8 @@ public class XmlArrangementService implements ArrangementService {
             Long deadline = Long.valueOf(element.attribute("deadline").getValue());
             Arrangement arrangement = new Arrangement(value);
             arrangement.setDeadline(deadline);
-            boolean hasAttr = Boolean.valueOf(element.attribute("hasLabelAttr").getValue());
-            if(hasAttr){
-                String labelAttr = element.attribute("labelAttr").getValue();
-                arrangement.setLabel(new AttrLabelType(labelType, labelAttr));
-            }else {
-                arrangement.setLabel(new NoAttrLabelType(labelType));
-            }
+            String labelAttr = element.attribute("labelAttr").getValue();
+            arrangement.setLabel(new LabelType(labelType, labelAttr));
             arrangements.add(arrangement);
         }
         return arrangements;
@@ -87,11 +80,7 @@ public class XmlArrangementService implements ArrangementService {
                     element.addAttribute("labelType", arrangement.getLabel().getName());
                     element.addAttribute("value", arrangement.getValue());
                     element.addAttribute("deadline", arrangement.getDeadline()+"");
-                    boolean hasAttr = arrangement.getLabel().hasAttr();
-                    element.addAttribute("hasLabelAttr", hasAttr+"");
-                    if(hasAttr) {
-                        element.addAttribute("labelAttr", arrangement.getLabel().getAttr());
-                    }
+                    element.addAttribute("labelAttr", arrangement.getLabel().getAttr());
                 }
                 write();
             }

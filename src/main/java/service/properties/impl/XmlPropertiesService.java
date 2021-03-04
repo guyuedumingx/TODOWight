@@ -1,7 +1,6 @@
 package service.properties.impl;
 
 import model.label.LabelType;
-import model.label.impl.NoAttrLabelType;
 import org.dom4j.*;
 import org.dom4j.dom.DOMDocument;
 import org.dom4j.io.SAXReader;
@@ -66,6 +65,7 @@ public class XmlPropertiesService  implements PropertiesService {
     public void addLabelType(LabelType label) {
         Element element = root.addElement("label");
         element.addAttribute("name", label.getName());
+        element.addAttribute("attr", label.getAttr());
         write();
     }
 
@@ -94,7 +94,8 @@ public class XmlPropertiesService  implements PropertiesService {
         for (Iterator it = root.elementIterator("label"); it.hasNext();) {
             Element element = (Element) it.next();
             String name = element.attribute("name").getValue();
-            labels.add(new NoAttrLabelType(name));
+            String attr = element.attribute("attr").getValue();
+            labels.add(new LabelType(name,attr));
         }
         return labels;
     }

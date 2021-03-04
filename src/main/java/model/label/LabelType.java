@@ -8,17 +8,20 @@ import javafx.beans.property.StringProperty;
  *
  * @author yohoyes
  */
-public abstract class LabelType {
+public class LabelType {
     private StringProperty name;
+    private String attr = "";
 
     public LabelType(){}
 
     public LabelType(String name) {
         this.name = new SimpleStringProperty(name);
+        this.attr = name;
     }
 
     public LabelType(String name, String attr) {
         this.name = new SimpleStringProperty(name);
+        this.attr = attr;
     }
 
     public String getName() {
@@ -33,9 +36,11 @@ public abstract class LabelType {
         this.name.setValue(name);
     }
 
-    public abstract boolean hasAttr();
+    public void setAttr(String attr) {
+        this.attr = attr;
+    }
 
     public String getAttr() {
-        return "";
+        return attr;
     }
 }

@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.label.LabelType;
 import model.Setting;
-import model.label.impl.NoAttrLabelType;
 
 /**
  * 设置页面的控制器
@@ -27,6 +26,9 @@ public class SettingController {
 
     @FXML
     private TextField nameField;
+
+    @FXML
+    private TextField attrField;
 
     @FXML
     private TextField pathField;
@@ -52,9 +54,10 @@ public class SettingController {
         pushBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 String name = nameField.getText();
+                String text = attrField.getText();
                 //如果是空字符串，则不用添加为标签
                 if(!"".equals(name)) {
-                    LabelType label = new NoAttrLabelType(name);
+                    LabelType label = new LabelType(name, text);
                     Setting.getSetting().addLabel(label);
                 }
             }

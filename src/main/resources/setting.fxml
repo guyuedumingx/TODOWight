@@ -14,19 +14,20 @@
             <Font name="System Bold" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="55.0" layoutY="105.0" prefHeight="35.0" prefWidth="87.0" text="自定义标签">
+      <Label layoutX="43.0" layoutY="123.0" prefHeight="35.0" prefWidth="99.0" text="自定义标签:">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextField id="labelField" fx:id="nameField" layoutX="239.0" layoutY="108.0" prefHeight="30.0" prefWidth="110.0" stylesheets="@css/setting.css" />
-      <Button id="labelBut" fx:id="pushBut" layoutX="356.0" layoutY="108.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
-      <Label layoutX="55.0" layoutY="148.0" prefHeight="35.0" prefWidth="87.0" text="资源路径">
+      <TextField id="labelField" fx:id="nameField" layoutX="157.0" layoutY="125.0" prefHeight="30.0" prefWidth="192.0" promptText="Name" stylesheets="@css/setting.css" />
+      <Button id="labelBut" fx:id="pushBut" layoutX="356.0" layoutY="169.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
+      <Label layoutX="43.0" layoutY="259.0" prefHeight="35.0" prefWidth="87.0" text="资源路径:">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextField id="labelField" fx:id="pathField" editable="false" layoutX="157.0" layoutY="151.0" prefHeight="30.0" prefWidth="192.0" stylesheets="@css/setting.css" />
-      <Button id="pathBut" fx:id="pathBut" layoutX="356.0" layoutY="151.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
+      <TextField id="labelField" fx:id="pathField" editable="false" layoutX="157.0" layoutY="261.0" prefHeight="30.0" prefWidth="192.0" promptText="Path" stylesheets="@css/setting.css" />
+      <Button id="pathBut" fx:id="pathBut" layoutX="356.0" layoutY="261.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@css/setting.css" />
+      <TextField id="labelField" fx:id="attrField" layoutX="157.0" layoutY="169.0" prefHeight="30.0" prefWidth="192.0" promptText="Attribution" stylesheets="@css/setting.css" />
    </children>
 </AnchorPane>

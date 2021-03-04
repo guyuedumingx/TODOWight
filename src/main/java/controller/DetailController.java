@@ -8,6 +8,8 @@ import javafx.scene.input.MouseButton;
 import model.Arrangement;
 import model.label.LabelType;
 import model.Setting;
+import util.AttrUtil;
+
 import java.util.List;
 
 /**
@@ -57,8 +59,11 @@ public class DetailController {
              ChangeListener<String>() {
                  @Override
                  public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                     arrangement.setLabel(getLabelsByName(labelTypes,newValue));
+                     LabelType label = getLabelsByName(labelTypes, newValue);
+                     arrangement.setLabel(label);
+                     itemLabel.setTooltip(AttrUtil.getTooltipbyLabel(label));
                      itemLabel.textProperty().bind(arrangement.getLabel().getNameProperty());
+
                  }
              }
         );
