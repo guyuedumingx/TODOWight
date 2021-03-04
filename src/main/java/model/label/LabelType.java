@@ -1,4 +1,4 @@
-package model;
+package model.label;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -8,10 +8,16 @@ import javafx.beans.property.StringProperty;
  *
  * @author yohoyes
  */
-public class LabelType {
+public abstract class LabelType {
     private StringProperty name;
 
+    public LabelType(){}
+
     public LabelType(String name) {
+        this.name = new SimpleStringProperty(name);
+    }
+
+    public LabelType(String name, String attr) {
         this.name = new SimpleStringProperty(name);
     }
 
@@ -25,5 +31,11 @@ public class LabelType {
 
     public void setName(String name) {
         this.name.setValue(name);
+    }
+
+    public abstract boolean hasAttr();
+
+    public String getAttr() {
+        return "";
     }
 }

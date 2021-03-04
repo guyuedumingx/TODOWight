@@ -2,24 +2,30 @@ package model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.label.LabelType;
+import model.label.impl.NoAttrLabelType;
 
 /**
  * 事务类
  * 核心类
+ * 定义了一个代办事项
  *
  * @author yohoyes
  */
 public class Arrangement {
     private LabelType label = null;
+    //相当于String,之所以用StringProperty,是为了跟界面的控件进行绑定
     private StringProperty value = null;
+    //最后期限
+    private long deadline = -1;
     private static final String DEFAULT_LABEL_NAME = "TODO";
 
     public Arrangement(String value) {
-        this(DEFAULT_LABEL_NAME, value);
+        this(new NoAttrLabelType(DEFAULT_LABEL_NAME), value);
     }
 
-    public Arrangement(String label, String value) {
-        this.label = new LabelType(label);
+    public Arrangement(LabelType label, String value) {
+        this.label = label;
         this.value = new SimpleStringProperty(value);
     }
 
@@ -41,5 +47,17 @@ public class Arrangement {
 
     public void setValue(String value) {
         this.value.setValue(value);
+    }
+
+    public boolean hasDeadline() {
+        return deadline != -1;
+    }
+
+    public long getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(long deadline) {
+        this.deadline = deadline;
     }
 }

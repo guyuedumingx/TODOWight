@@ -1,6 +1,6 @@
 package service.properties;
 
-import model.LabelType;
+import model.label.LabelType;
 
 import java.util.List;
 

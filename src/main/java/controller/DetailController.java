@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import model.Arrangement;
-import model.LabelType;
+import model.label.LabelType;
 import model.Setting;
 import java.util.List;
 

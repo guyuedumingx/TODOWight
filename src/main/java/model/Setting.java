@@ -2,9 +2,15 @@ package model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.label.LabelType;
+import model.label.impl.AttrLabelType;
+import model.label.impl.NoAttrLabelType;
 import service.properties.PropertiesService;
 import service.properties.impl.XmlPropertiesService;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,6 +37,7 @@ public class Setting {
     public void init() {
         service = new XmlPropertiesService(PROPERTIES_FILE_NAME);
         labels = service.readLabelType();
+        labels.add(new AttrLabelType("DONE", "DONE"));
         String path = service.getPath();
         if("".equals(path)){
             path = this.getClass().getClassLoader().getResource("").getPath();
@@ -51,7 +58,13 @@ public class Setting {
         if(++index >= labels.size()) {
             index = 0;
         }
-        return labels.get(index);
+        LabelType labelType = labels.get(index);
+        //专门为DONE标签优化
+        if("DONE".equals(labelType.getName())) {
+            String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            labelType = new AttrLabelType(labelType.getName(), "Closed at: "+time);
+        }
+        return labelType;
     }
 
     private int getLabelIndex(LabelType labelType) {

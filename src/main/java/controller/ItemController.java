@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -13,7 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Arrangement;
-import model.LabelType;
+import model.label.LabelType;
 import model.Setting;
 import java.io.IOException;
 import java.net.URL;
@@ -79,6 +80,13 @@ public class ItemController {
         //绑定代办的标签
         label.textProperty().bind(arrangement.getLabel().getNameProperty());
         addItemButtonAction(item, arrangements);
+
+        if(arrangement.getLabel().hasAttr()) {
+            label.setTooltip(new Tooltip(arrangement.getLabel().getAttr()));
+        }
+        if(arrangement.hasDeadline()) {
+            content.setTooltip(new Tooltip(arrangement.getDeadline()+""));
+        }
     }
 
     @FXML
@@ -113,6 +121,9 @@ public class ItemController {
                 LabelType nextLabel = Setting.getSetting().getNextLabel(arrangement.getLabel());
                 arrangement.setLabel(nextLabel);
                 label.textProperty().bind(arrangement.getLabel().getNameProperty());
+                if(nextLabel.hasAttr()) {
+                    label.setTooltip(new Tooltip(nextLabel.getAttr()));
+                }
             }
         });
 

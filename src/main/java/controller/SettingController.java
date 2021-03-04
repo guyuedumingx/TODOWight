@@ -8,8 +8,9 @@ import javafx.scene.input.MouseButton;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import model.LabelType;
+import model.label.LabelType;
 import model.Setting;
+import model.label.impl.NoAttrLabelType;
 
 /**
  * 设置页面的控制器
@@ -53,7 +54,7 @@ public class SettingController {
                 String name = nameField.getText();
                 //如果是空字符串，则不用添加为标签
                 if(!"".equals(name)) {
-                    LabelType label = new LabelType(name);
+                    LabelType label = new NoAttrLabelType(name);
                     Setting.getSetting().addLabel(label);
                 }
             }
