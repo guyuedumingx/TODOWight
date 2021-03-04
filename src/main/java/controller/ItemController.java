@@ -20,27 +20,52 @@ import java.net.URL;
 
 /**
  * 选项卡的控制器
+ * 代表着一条具体的代办事项
  * @author yohoyes
  */
 public class ItemController {
 
+    /**
+     * 编辑按钮
+     */
     @FXML
     private Button editBut;
 
+    /**
+     * 该界面所有控件的公有父类
+     */
     @FXML
     private HBox parentBox;
 
+    /**
+     * 删除按键
+     */
     @FXML
     private Button delBut;
 
+    /**
+     * 代办事项左侧的标签
+     */
     @FXML
     private Label label;
 
+    /**
+     * 代办事项的内容
+     */
     @FXML
     private Label content;
 
+    /**
+     * 操作的具体代办事项
+     */
     private Arrangement arrangement = null;
 
+    /**
+     * 自定义的初始化方法
+     * @param arrangements 代办事项的容器
+     * @param showEditor 添加代办的时候选择是否显示编辑窗口
+     * @param arrangement 具体的代办事项
+     */
     public void init(BorderPane item, VBox arrangements, boolean showEditor, Arrangement arrangement) {
         this.arrangement = arrangement;
         if(showEditor) {
@@ -49,7 +74,9 @@ public class ItemController {
             editArea.selectAll();
 
         }
+        //绑定代办的内容
         content.textProperty().bind(arrangement.getValueProperty());
+        //绑定代办的标签
         label.textProperty().bind(arrangement.getLabel().getNameProperty());
         addItemButtonAction(item, arrangements);
     }
@@ -63,6 +90,7 @@ public class ItemController {
         Button editBut = (Button)item.lookup("#editBut");
         Button delBut = (Button) item.lookup("#delBut");
 
+        //编辑按钮的事件
         editBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 AnchorPane editorPane = loadEditor();
@@ -71,6 +99,7 @@ public class ItemController {
             }
         });
 
+        //删除按键的事件
         delBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 arrangements.getChildren().remove(item);
@@ -78,6 +107,7 @@ public class ItemController {
             }
         });
 
+        //标签的点击事件
         label.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 LabelType nextLabel = Setting.getSetting().getNextLabel(arrangement.getLabel());
@@ -86,6 +116,7 @@ public class ItemController {
             }
         });
 
+        //内容的点击事件
         content.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 BorderPane anchorPane = loadDetail();
@@ -93,6 +124,9 @@ public class ItemController {
         });
     }
 
+    /**
+     * 加载编辑界面
+     */
     private AnchorPane loadEditor() {
         URL resource = this.getClass().getClassLoader().getResource("editor.fxml");
         Stage stage = new Stage();
@@ -111,6 +145,9 @@ public class ItemController {
         return root;
     }
 
+    /**
+     * 加载详情页面
+     */
     private BorderPane loadDetail() {
         URL resource = this.getClass().getClassLoader().getResource("detail3.fxml");
         Stage stage = new Stage();

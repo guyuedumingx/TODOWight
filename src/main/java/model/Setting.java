@@ -16,6 +16,9 @@ import java.util.List;
  */
 public class Setting {
     private static String PROPERTIES_FILE_NAME = "properties.xml";
+    public static String APPLICATION_NAME = "代办事项";
+    public static String ARRANGEMENT_DEFAULT_TEXT = "Text Something Here";
+
     private StringProperty path = new SimpleStringProperty();
     private static Setting properties = new Setting();
     private List<LabelType> labels = null;

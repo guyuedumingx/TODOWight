@@ -9,6 +9,7 @@ import model.Arrangement;
 
 /**
  * 编辑页面的控制器
+ * TODO 目前搁置开发
  * @author yohoyes
  */
 public class EditorController {

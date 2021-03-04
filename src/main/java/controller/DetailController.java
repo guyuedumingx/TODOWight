@@ -27,19 +27,31 @@ public class DetailController {
     private Arrangement arrangement = null;
     private Label itemLabel = null;
 
+    /**
+     * 自定义的出始化方法
+     *
+     * @param itemLabel
+     * @param arrangement
+     */
     public void init(Label itemLabel, Arrangement arrangement) {
         this.itemLabel = itemLabel;
         this.arrangement = arrangement;
+        //把界面中的textArea中的文本设置成代办的内容
         content.textProperty().bindBidirectional(arrangement.getValueProperty());
+        //获取标签的种类
         List<LabelType> labelTypes = Setting.getSetting().getLabelTypes();
         fillChoiceBox(labelTypes);
     }
 
+    /**
+     * 把所有的标签种类填入选择框中
+     */
     @FXML
     private void fillChoiceBox (List<LabelType> labelTypes) {
         for(LabelType label : labelTypes) {
             choiceBox.getItems().add(label.getName());
         }
+        //把选择框的初始值设置成当前具体代办的标签名
         choiceBox.getSelectionModel().select(arrangement.getLabel().getName());
         choiceBox.getSelectionModel().selectedItemProperty().addListener(new
              ChangeListener<String>() {
@@ -61,6 +73,10 @@ public class DetailController {
         return null;
     }
 
+    /**
+     * 详情页面右上角的笔的按键绑定
+     * 用于切换中间显示界面的可编辑状态
+     */
     @FXML
     public void addEditButtonAction() {
         editBut.setOnMouseClicked(event -> {
@@ -77,6 +93,7 @@ public class DetailController {
 
     @FXML
     public void initialize() {
+        //设置textArea自动换行
         content.setWrapText(true);
         addEditButtonAction();
     }

@@ -47,15 +47,18 @@ public class SettingController {
     }
 
     public void addButtonAction() {
+        //设置界面定义标签的确定按键
         pushBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 String name = nameField.getText();
+                //如果是空字符串，则不用添加为标签
                 if(!"".equals(name)) {
                     LabelType label = new LabelType(name);
                     Setting.getSetting().addLabel(label);
                 }
             }
         });
+        //选择路径作为资源路径的按键
         pathBut.setOnMouseClicked(event -> {
             if(event.getButton() == MouseButton.PRIMARY) {
                 DirectoryChooser chooser = new DirectoryChooser();

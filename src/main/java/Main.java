@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.Setting;
 
 import java.net.URL;
 
@@ -25,7 +26,7 @@ public class Main extends Application {
         Parent root = loader.load();
         MainController controller = (MainController) loader.getController();
         controller.init(primaryStage);
-        primaryStage.setTitle("代办事项");
+        primaryStage.setTitle(Setting.APPLICATION_NAME);
         primaryStage.setScene(new Scene(root, 924, 622));
         primaryStage.show();
 
