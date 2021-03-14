@@ -1,8 +1,12 @@
 package model;
 
+import javafx.beans.property.Property;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.label.LabelType;
+
+import java.time.LocalDate;
 
 /**
  * 事务类
@@ -51,6 +55,7 @@ public class Arrangement {
     public boolean hasDeadline() {
         return deadline != -1;
     }
+
 
     public long getDeadline() {
         return deadline;

@@ -10,6 +10,7 @@ import model.label.LabelType;
 import model.Setting;
 import util.AttrUtil;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -22,6 +23,9 @@ public class DetailController {
 
     @FXML
     private ChoiceBox<String> choiceBox;
+
+    @FXML
+    private DatePicker deadlinePicker;
 
     @FXML
     private TextArea content;
@@ -42,7 +46,18 @@ public class DetailController {
         content.textProperty().bindBidirectional(arrangement.getValueProperty());
         //获取标签的种类
         List<LabelType> labelTypes = Setting.getSetting().getLabelTypes();
+        addChangeListenerForDatePicker();
         fillChoiceBox(labelTypes);
+    }
+
+    @FXML
+    private void addChangeListenerForDatePicker() {
+        deadlinePicker.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) {
+                arrangement.setDeadline(newValue.atStartOfDay().getNano());
+            }
+        });
     }
 
     /**

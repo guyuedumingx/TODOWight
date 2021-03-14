@@ -24,8 +24,18 @@
                   </Label>
                </top>
                <right>
-                  <HBox prefHeight="30.0" prefWidth="149.0" BorderPane.alignment="BOTTOM_RIGHT">
+                  <HBox prefHeight="30.0" prefWidth="387.0" BorderPane.alignment="BOTTOM_RIGHT">
                      <children>
+                        <Label maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="87.0" text="Deadline: ">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="deadlinePicker" editable="false" maxHeight="1.7976931348623157E308" prefHeight="30.0" prefWidth="187.0" promptText="最后期限">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </DatePicker>
                         <ChoiceBox id="top_choiceBox" fx:id="choiceBox" minWidth="99.0" opacity="0.86" prefHeight="30.0" prefWidth="99.0" stylesheets="@css/detail.css" />
                         <Button id="editBut" fx:id="editBut" mnemonicParsing="false" prefHeight="30.0" prefWidth="34.0" stylesheets="@css/detail.css">
                            <HBox.margin>

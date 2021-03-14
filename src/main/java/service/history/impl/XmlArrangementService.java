@@ -13,6 +13,7 @@ import service.history.ArrangementService;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -59,14 +60,24 @@ public class XmlArrangementService implements ArrangementService {
             Element element = (Element) it.next();
             String labelType = element.attribute("labelType").getValue();
             String value = element.attribute("value").getValue();
-            Long deadline = Long.valueOf(element.attribute("deadline").getValue());
             Arrangement arrangement = new Arrangement(value);
-            arrangement.setDeadline(deadline);
+
+            String deadline = element.attribute("deadline").getValue();
+            arrangement.setDeadline(Long.valueOf(deadline));
             String labelAttr = element.attribute("labelAttr").getValue();
             arrangement.setLabel(new LabelType(labelType, labelAttr));
             arrangements.add(arrangement);
         }
         return arrangements;
+    }
+
+    private int[] getTime(String deadline) {
+        String[] split = deadline.split("-");
+        int[] times = new int[split.length];
+        for(int i=0; i<times.length; i++) {
+            times[i] = Integer.valueOf(split[i]);
+        }
+        return times;
     }
 
     @Override

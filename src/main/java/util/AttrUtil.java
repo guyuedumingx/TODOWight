@@ -2,7 +2,6 @@ package util;
 
 import javafx.scene.control.Tooltip;
 import model.label.LabelType;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
